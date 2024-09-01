@@ -1,0 +1,18 @@
+.main-board {
+    width: 70%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.message {
+    margin: 200px 0 100px;
+    font-size: 40px;
+}
+
+.for-login a {
+    background-color: #09f;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+}

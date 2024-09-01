@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->singleton(
+            'Laravel\Fortify\Http\Requests\LoginRequest',
+            \App\Http\Requests\LoginRequest::class
+        );
     }
 }
