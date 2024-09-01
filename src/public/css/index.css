@@ -1,0 +1,50 @@
+.search-form input {
+    padding: 5px 20px;
+    border-radius: 3px;
+}
+
+.link-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.link-list a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link-list .put-up {
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+
+/* main part */
+.index-part {
+    display: flex;
+    margin-top: 50px;
+    border-bottom: 2px solid #666;
+}
+
+.index-part a {
+    text-decoration: none;
+}
+
+.recommend, .my-list {
+    margin-left: 80px;
+}
+
+.item-board {
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.item-card {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 3px;
+}
