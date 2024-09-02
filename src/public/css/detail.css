@@ -1,0 +1,124 @@
+.search-form input {
+    padding: 5px 20px;
+    border-radius: 3px;
+}
+
+.link-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.link-list a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link-list .put-up {
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+
+.main-board {
+    width: 80%;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-board {
+    width: 45%;
+    text-align: center;
+    background-color: #ddd;
+}
+
+.image-board img {
+    width: 100%;
+}
+
+.description-board {
+    width: 45%;
+    padding: 0 20px;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.brand {
+    margin: 20px 0;
+}
+
+.price {
+    margin: 20px 0;
+    font-size: 26px;
+}
+
+.rating {
+    display: flex;
+    margin: 20px 0;
+}
+
+.favorite button {
+    background-color: #fff;
+    border: none;
+}
+
+.star, .comment {
+    font-size: 1.3em;
+}
+
+.review {
+    margin-left: 50px;
+}
+
+.submit button {
+    width: 80%;
+    padding: 5px 10px;
+    background-color: #f33;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.description p {
+    margin: 30px 0 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tag-title {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.category-tag {
+    margin-top: 10px;
+    display: flex;
+}
+
+.category-tag p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.category {
+    margin-left: 30px;
+}
+
+.condition {
+    display: flex;
+    margin-top: 10px;
+}
+
+.condition p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.condition-tag {
+    margin-left: 30px;
+}

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ItemController::class, 'show'])->name('home');
+Route::get('/item/{id}', [ItemController::class, 'detailItem'])->name('detail');
 Route::get('register', [RegisterController::class, 'create'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
 
