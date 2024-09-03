@@ -13,8 +13,10 @@
 @endsection
 
 @section('search')
-<form action="" method="post" class="search-form">
+<form action="/search" method="post" class="search-form">
+    @csrf
     <input type="text" name="keyword" placeholder="なにをお探しですか？">
+    <button type="submit">検索</button>
 </form>
 @endsection
 
@@ -29,7 +31,7 @@
 @section('content')
 <div class="index-part">
     <div class="recommend">
-        <a href="">おすすめ</a>
+        <a href="{{ route('home') }}">おすすめ</a>
     </div>
     <div class="my-list">
         <a href="">マイリスト</a>
@@ -60,7 +62,7 @@
 @section('content')
 <div class="index-part">
     <div class="recommend">
-        <a href="">おすすめ</a>
+        <a href="{{ route('home') }}">おすすめ</a>
     </div>
     <div class="my-list">
         <a href="{{ asset('login') }}">マイリスト</a>
@@ -76,7 +78,7 @@
             <a href="{{ route('detail', ['id' => $item->id]) }}">
                 <div class="name">{{ $item->name }}</div>
             </a>
-                <div class="price">￥{{ number_format($item->price) }}</div>
+            <div class="price">￥{{ number_format($item->price) }}</div>
         </div>
     </div>
     @endforeach
