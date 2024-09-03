@@ -43,8 +43,16 @@
     grid-template-columns: repeat(5, 1fr);
 }
 
+.item-board a {
+    text-decoration: none;
+}
+
 .item-card {
     width: 100%;
     background-color: #ddd;
     border-radius: 3px;
+}
+
+.name, .price {
+    font-size: 14px;
 }
