@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Laravel\Fortify\Contracts\LogoutResponse;
 
 class LogoutController extends Controller
 {
@@ -42,6 +41,6 @@ class LogoutController extends Controller
             $request->session()->regenerateToken();
         }
 
-        return view('index');
+        return redirect('/');
     }
 }

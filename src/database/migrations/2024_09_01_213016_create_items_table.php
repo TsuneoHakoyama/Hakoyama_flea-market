@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->integer('price');
             $table->foreignId('condition_id')->constrained('conditions');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('description');
             $table->timestamps();
             $table->softDeletes();
