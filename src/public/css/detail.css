@@ -1,11 +1,30 @@
+/* header */
+.logo-link {
+    width: 20%;
+}
+
+.logo-link a img {
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+}
+
 .search-form input {
-    padding: 5px 20px;
+    padding: 5px;
     border-radius: 3px;
 }
 
 .link-list {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 16px;
+}
+
+.link-list li {
+    margin-left: 20px;
 }
 
 .link-list a {
@@ -20,15 +39,16 @@
     padding: 5px 15px;
 }
 
+/* body */
 .main-board {
-    width: 80%;
+    width: 85%;
     margin: 100px auto 0;
     display: flex;
     justify-content: space-between;
 }
 
 .image-board {
-    width: 45%;
+    width: 40%;
     text-align: center;
     background-color: #ddd;
 }
@@ -38,13 +58,8 @@
 }
 
 .description-board {
-    width: 45%;
-    padding: 0 20px;
-}
-
-.name {
-    font-size: 36px;
-    font-weight: bold;
+    width: 50%;
+    font-size: 14px;
 }
 
 .brand {
@@ -59,6 +74,11 @@
 .rating {
     display: flex;
     margin: 20px 0;
+    align-items: center;
+}
+
+.favorite {
+    text-align: center;
 }
 
 .favorite button {
@@ -67,15 +87,15 @@
 }
 
 .star, .comment {
-    font-size: 1.3em;
+    font-size: 1.7em;
 }
 
 .review {
     margin-left: 50px;
 }
 
-.submit button {
-    width: 80%;
+.purchase button {
+    width: 100%;
     padding: 5px 10px;
     background-color: #f33;
     color: #fff;
@@ -89,36 +109,48 @@
     font-weight: bold;
 }
 
-.tag-title {
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: bold;
+.tag-board {
+    width: 100%;
+
 }
 
-.category-tag {
+.title {
+    margin-top: 20px;
+}
+
+.category {
     margin-top: 10px;
     display: flex;
+    align-items: center;
 }
 
-.category-tag p {
+.category h4 {
     margin: 0;
     font-weight: bold;
 }
 
-.category {
-    margin-left: 30px;
+.category-tag {
+    margin-left: 20px;
+    padding: 5px 10px;
+    background-color: #ddd;
+    border-radius: 20px;
 }
 
 .condition {
     display: flex;
     margin-top: 10px;
+    align-items: center;
 }
 
-.condition p {
+.condition h4 {
     margin: 0;
     font-weight: bold;
 }
 
 .condition-tag {
-    margin-left: 30px;
+    margin-left: 20px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
 }

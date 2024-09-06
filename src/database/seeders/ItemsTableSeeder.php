@@ -19,7 +19,7 @@ class ItemsTableSeeder extends Seeder
             'name' => 'コーヒーミル',
             'price' => 5999,
             'condition_id' => 1,
-            'description' => '強力モーターで素早く粉砕。一度に30gまで。水洗い化でお手入れ簡単。',
+            'description' => '強力モーターで素早く粉砕。一度に30gまで。水洗い可でお手入れ簡単。',
         ];
         DB::table('items')->insert($param);
         $param = [

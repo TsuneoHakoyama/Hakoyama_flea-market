@@ -1,11 +1,30 @@
+/* header */
+.logo-link {
+    width: 20%;
+}
+
+.logo-link a img {
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+}
+
 .search-form input {
-    padding: 5px 20px;
+    padding: 5px;
     border-radius: 3px;
 }
 
 .link-list {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 16px;
+}
+
+.link-list li {
+    margin-left: 20px;
 }
 
 .link-list a {
@@ -20,7 +39,7 @@
     padding: 5px 15px;
 }
 
-/* main part */
+/* body */
 .index-part {
     display: flex;
     margin-top: 50px;
@@ -36,7 +55,7 @@
 }
 
 .item-board {
-    width: 90%;
+    width: 95%;
     margin: 50px auto;
     display: grid;
     gap: 10px;
@@ -54,5 +73,5 @@
 }
 
 .name, .price {
-    font-size: 14px;
+    font-size: 12px;
 }

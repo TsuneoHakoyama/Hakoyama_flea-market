@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -22,4 +23,6 @@ Route::get('/item/{id}', [ItemController::class, 'detailItem'])->name('detail');
 Route::get('register', [RegisterController::class, 'create'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
 
+Route::post('/like/{item_id}', [FavoriteController::class, 'create'])->name('like');
+Route::post('/unlike/{item_id}', [FavoriteController::class, 'delete'])->name('unlike');
 Route::get('logout', [LogoutController::class, 'destroy'])->name('logout');
