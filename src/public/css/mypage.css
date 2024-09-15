@@ -1,0 +1,77 @@
+/* header */
+.logo-link {
+    width: 20%;
+}
+
+.logo-link a img {
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form input {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.link-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 16px;
+}
+
+.link-list li {
+    margin-left: 20px;
+}
+
+.link-list a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link-list .put-up {
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+
+/* body */
+.index-part {
+    display: flex;
+    margin-top: 50px;
+    border-bottom: 2px solid #666;
+}
+
+.index-part a {
+    text-decoration: none;
+}
+
+.recommend, .my-list {
+    margin-left: 80px;
+}
+
+.item-board {
+    width: 95%;
+    margin: 50px auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.item-board a {
+    text-decoration: none;
+}
+
+.item-card {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.name, .price {
+    font-size: 12px;
+}

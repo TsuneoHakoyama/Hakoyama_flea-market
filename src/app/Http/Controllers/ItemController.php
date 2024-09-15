@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Favorite;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
@@ -43,12 +42,10 @@ class ItemController extends Controller
     public function detailItem(Item $id)
     {
         $item = Item::where('id', $id->id )
-                ->with(['categories', 'condition', 'favorites'])
+                ->with(['categories', 'comments', 'condition', 'favorites'])
                 ->first();
-        
-        $count = Favorite::where('item_id', $id->id)
-                 ->get();
 
-        return view('item-detail', compact('item', 'count'));
+        return view('item-detail', compact('item'));
     }
+
 }

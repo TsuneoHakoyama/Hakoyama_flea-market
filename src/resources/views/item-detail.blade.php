@@ -30,6 +30,7 @@
     <li><a href="" class="put-up">出品</a></li>
 </div>
 @endsection
+
 @section('content')
 <div class="main-board">
     <div class="image-board">
@@ -37,54 +38,59 @@
     </div>
     <div class="description-board">
         <div class="item">
-            <div class="name">{{ $item->name }}</div>
+            <div class="item-name">{{ $item->name }}</div>
             <div class="brand">ブランド名</div>
             <div class="price">¥{{ number_format($item->price) }}</div>
         </div>
         <div class="rating">
             @if (count($item->favorites) == 0)
-            <form action="{{ route('like', ['item_id', $item->id]) }}" method="post">
+            <form action="{{ route('like', ['item_id'=> $item->id]) }}" method="post">
                 @csrf
                 <div class="favorite">
-                    <button><i class="fa-regular fa-star star"></i></button>
+                    <button><i class="fa-regular fa-star star"></i></button><br>
+                    {{ count($item->favorites) }}
                 </div>
             </form>
             @else
-            <form action="{{ route('unlike', ['item_id', $item->id]) }}" method="post">
+            <form action="{{ route('unlike', ['item_id'=> $item->id]) }}" method="post">
                 @csrf
                 <div class="favorite">
-                    <button><i class="fa-regular fa-star star"></i></button>
+                    <button><i class="fa-regular fa-star star"></i></button><br>
+                    {{ count($item->favorites) }}
                 </div>
             </form>
             @endif
-            {{ count($count) }}
+
             <div class="review">
-                <a href=""><i class="fa-regular fa-comment comment"></i></a>
+                <a href="{{ route('comment', ['item_id'=> $item->id]) }}"><i class="fa-regular fa-comment comment"></i></a><br>
+                {{ count($item->comments) }}
             </div>
         </div>
         <div class="purchase">
-            <form action="" method="post">
-                <input type="hidden" name="id" value="{{ $item->id }}">
+            <form action="{{ route('confirm', ['item_id' => $item->id]) }}" method="get">
+                @csrf
                 <button type="submit">購入する</button>
             </form>
         </div>
 
         <div class="description">
-            <p>商品説明</p>
+            <h2>商品説明</h2>
             {{ $item->description }}
         </div>
-        <div class="tag-board">
-            <div class="title">商品の情報</div>
-            <div class="category">
-                <p>カテゴリー</p>
-                @foreach ($item->categories as $category)
-                <div class="category-tag">{{ $category->category }}</div>
-                @endforeach
-            </div>
+        <div class="title">
+            <h2>商品の情報</h2>
+        </div>
+        <div class="category">
+            <h4>カテゴリー</h4>
+            @foreach ($item->categories as $category)
+            <div class="category-tag">{{ $category->category }}</div>
+            @endforeach
         </div>
         <div class="condition">
-            <p>商品の状態</p>
-            <div class="condition-tag">{{ $item->condition->condition }}</div>
+            <h4>商品の状態</h4>
+            <div class="condition-tag">
+                {{ $item->condition->condition }}
+            </div>
         </div>
     </div>
 </div>
@@ -105,21 +111,18 @@
     </div>
     <div class="description-board">
         <div class="item">
-            <div class="name">
-                <h1>{{ $item->name }}</h1>
-            </div>
+            <div class="item-name">{{ $item->name }}</div>
             <div class="brand">ブランド名</div>
-            <div class="price">
-                <h3>¥{{ number_format($item->price) }}</h3>
-            </div>
+            <div class="price">¥{{ number_format($item->price) }}</div>
         </div>
         <div class="rating">
             <div class="favorite">
                 <button><i class="fa-regular fa-star star"></i></button><br>
-                {{ count($count) }}
+                {{ count($item->favorites) }}
             </div>
             <div class="review">
-                <a href=""><i class="fa-regular fa-comment comment"></i></a>
+                <a href=""><i class="fa-regular fa-comment comment"></i></a><br>
+                {{ count($item->comments) }}
             </div>
         </div>
         <div class="purchase">
