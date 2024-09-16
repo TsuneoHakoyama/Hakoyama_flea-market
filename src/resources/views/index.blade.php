@@ -9,7 +9,9 @@
 @endsection
 
 @section('logo')
-<a href="{{ route('home') }}"><img src="{{ asset('storage/image/logo.svg') }}" alt=""></a>
+<div class="logo-link">
+    <a href="{{ route('home') }}"><img src="{{ asset('storage/image/logo.svg') }}" alt=""></a>
+</div>
 @endsection
 
 @section('search')
@@ -24,10 +26,11 @@
 @section('link')
 <div class="link-list">
     <li><a href="{{ route('logout') }}">ログアウト</a></li>
-    <li><a href="">マイページ</a></li>
-    <li><a href="" class="put-up">出品</a></li>
+    <li><a href="{{ route('mypage') }}">マイページ</a></li>
+    <li><a href="{{ route('sell') }}" class="put-up">出品</a></li>
 </div>
 @endsection
+
 @section('content')
 <div class="index-part">
     <div class="recommend">
@@ -44,8 +47,10 @@
             <a href="{{ route('detail', ['id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
         </div>
         <div class="product-detail">
-            <div class="name">{{ $item->name }}</div>
-            <div class="price">{{ number_format($item->price) }}</div>
+            <a href="{{ route('detail', ['id' => $item->id]) }}">
+                <div class="name">{{ $item->name }}</div>
+            </a>
+            <div class="price">￥{{ number_format($item->price) }}</div>
         </div>
     </div>
     @endforeach
@@ -56,7 +61,7 @@
 <div class="link-list">
     <li><a href="{{ route('login') }}">ログイン</a></li>
     <li><a href="{{ route('register') }}">会員登録</a></li>
-    <li><a href="" class="put-up">出品</a></li>
+    <li><a href="{{ route('login') }}" class="put-up">出品</a></li>
 </div>
 @endsection
 @section('content')

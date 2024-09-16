@@ -19,6 +19,7 @@ class ItemController extends Controller
         $query = Item::query();
         $query = $this->getSearchQuery($request, $query);
         $items = $query->get();
+        
         return view('index', compact('items'));
     }
 
@@ -41,9 +42,10 @@ class ItemController extends Controller
     public function detailItem(Item $id)
     {
         $item = Item::where('id', $id->id )
-                ->with(['categories', 'condition'])
+                ->with(['categories', 'comments', 'condition', 'favorites'])
                 ->first();
 
-                return view('item-detail', compact('item'));
+        return view('item-detail', compact('item'));
     }
+
 }

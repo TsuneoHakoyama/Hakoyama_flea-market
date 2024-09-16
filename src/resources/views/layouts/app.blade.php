@@ -13,9 +13,9 @@
 
 <body>
     <header class="page-header">
-        <div>@yield('logo')</div>
-        <div class="search-form">@yield('search')</div>
-        <div class="navigation">@yield('link')</div>
+        @yield('logo')
+        @yield('search')
+        @yield('link')
     </header>
     @yield('content')
 </body>
