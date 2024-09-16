@@ -41,7 +41,6 @@
 
 /* body */
 .index-part {
-    display: flex;
     margin-top: 50px;
     border-bottom: 2px solid #666;
 }
@@ -50,7 +49,21 @@
     text-decoration: none;
 }
 
-.recommend, .my-list {
+.user {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-info {
+    display: flex;
+}
+
+.items {
+    display: flex;
+    margin-top: 50px;
+}
+
+.sell-items, .buy-items {
     margin-left: 80px;
 }
 

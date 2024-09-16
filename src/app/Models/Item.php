@@ -28,9 +28,9 @@ class Item extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function favoriteUsers(): BelongsToMany
+    public function favorites(): HasMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasMany(Favorite::class);
     }
 
     public function purchases(): HasMany

@@ -19,8 +19,8 @@ class CreateProfilesTable extends Migration
             $table->string('name');
             $table->string('postcode');
             $table->string('address');
-            $table->string('building');
-            $table->string('image');
+            $table->string('building')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

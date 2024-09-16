@@ -91,12 +91,12 @@
     border: none;
 }
 
-.star {
+.star-icon {
     font-size: 1.7em;
 }
 
-.comment {
-    font-size: 2.0em;
+.comment-icon {
+    font-size: 2em;
 }
 
 .review {
@@ -104,56 +104,42 @@
     text-align: center;
 }
 
-.purchase button {
+.comment-board {
     width: 100%;
-    padding: 5px 10px;
-    background-color: #f33;
-    color: #fff;
-    border: none;
+}
+
+.seller {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0 0;
+}
+
+.buyer {
+    display: flex;
+    margin: 20px 0 0;
+}
+
+.user-name {
+    margin-left: 30px;
+}
+
+.comment {
+    background-color: #ddd;
+}
+
+.input-board {
+    margin: 50px 0 0;
+}
+
+.input-board textarea {
+    width: 100%;
     border-radius: 5px;
 }
 
-.tag-board {
+.input-board button {
     width: 100%;
-}
-
-.title {
-    margin-top: 20px;
-}
-
-.category {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.category h4 {
-    margin: 0;
-    font-weight: bold;
-}
-
-.category-tag {
-    margin-left: 20px;
-    padding: 5px 10px;
-    background-color: #ddd;
-    border-radius: 20px;
-}
-
-.condition {
-    display: flex;
-    margin-top: 10px;
-    align-items: center;
-}
-
-.condition h4 {
-    margin: 0;
-    font-weight: bold;
-}
-
-.condition-tag {
-    margin-left: 20px;
-    padding: 5px 10px;
-    background-color: #fff;
-    border-radius: 20px;
-    text-align: center;
+    background-color: #f33;
+    color: #fff;
+    border: 1px solid #f33;
+    border-radius: 5px;
 }
