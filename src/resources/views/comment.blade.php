@@ -25,8 +25,8 @@
 @section('link')
 <div class="link-list">
     <li><a href="{{ route('logout') }}">ログアウト</a></li>
-    <li><a href="">マイページ</a></li>
-    <li><a href="" class="put-up">出品</a></li>
+    <li><a href="{{ route('mypage') }}">マイページ</a></li>
+    <li><a href="{{ route('sell') }}" class="put-up">出品</a></li>
 </div>
 @endsection
 

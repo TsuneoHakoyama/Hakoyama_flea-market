@@ -1,5 +1,5 @@
 .main-board {
-    width: 60%;
+    width: 50%;
     margin: 50px auto;
 }
 
@@ -16,11 +16,15 @@
     font-weight: bold;
 }
 
-.input-email, .input-password, .submit {
+.input-postcode, .input-address, .input-building {
+    margin-top: 50px;
+}
+
+.submit {
     margin-top: 80px;
 }
 
-.input-email input, .input-password input, .submit button {
+.input-postcode input, .input-address input, .input-building input, .submit button {
     width: 100%;
     border-radius: 5px;
     padding: 5px;

@@ -13,7 +13,7 @@
     <div class="title">
         <p>住所の変更</p>
     </div>
-    <form action="{{ route('update') }}" method="post" class="input-form">
+    <form action="/purchase/address/update" method="post" class="input-form">
         @csrf
         <div class="input-postcode">
             郵便番号<br>

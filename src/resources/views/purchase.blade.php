@@ -25,8 +25,8 @@
 @section('link')
 <div class="link-list">
     <li><a href="{{ route('logout') }}">ログアウト</a></li>
-    <li><a href="">マイページ</a></li>
-    <li><a href="" class="put-up">出品</a></li>
+    <li><a href="{{ route('mypage') }}">マイページ</a></li>
+    <li><a href="{{ route('sell') }}" class="put-up">出品</a></li>
 </div>
 @endsection
 
@@ -46,7 +46,7 @@
             <div class="payment-method">
                 <div class="title">支払方法</div>
                 <div class="input-method">
-                    <select name="payment_id" id="select">
+                    <select name="payment" id="select">
                         <option value="" selected>選択してください</option>
                         <option value="1">カード払い</option>
                         <option value="2">コンビニ払い</option>
@@ -95,7 +95,7 @@
             </table>
         </div>
         <div class="purchase-button">
-            <form action="" method="post">
+            <form action="/buy" method="post">
                 @csrf
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <input type="hidden" name="item_id" value="{{ $item->id }}">

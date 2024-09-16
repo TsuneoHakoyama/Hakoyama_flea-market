@@ -13,11 +13,6 @@ class ProfileController extends Controller
         return view('profile');
     }
 
-    public function store(Request $request)
-    {
-        $param = $request->all();
-    }
-    
     public function forModify()
     {
         return view('update-address');

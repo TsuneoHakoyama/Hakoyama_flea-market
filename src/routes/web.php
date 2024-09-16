@@ -33,13 +33,13 @@ Route::post('/unlike/{item_id}', [FavoriteController::class, 'delete'])->name('u
 Route::get('/item/{item_id}/comment', [CommentController::class, 'show'])->name('comment');
 Route::post('/item/{item_id}/comment', [CommentController::class, 'create'])->name('create');
 Route::get('/purchase/{item_id}', [PurchaseController::class, 'confirm'])->name('confirm');
-Route::post('/purchase', [PurchaseController::class, 'purchase']);
+Route::post('/buy', [PurchaseController::class, 'purchase']);
 Route::get('logout', [LogoutController::class, 'destroy'])->name('logout');
 
 Route::get('profile', [ProfileController::class, 'create']);
 Route::get('/purchase/address/{item_id}', [ProfileController::class, 'forModify'])->name('address');
-Route::post('/purchase/address/{item_id}/update', [ProfileController::class, 'update'])->name('update');
+Route::post('/purchase/address/update', [ProfileController::class, 'update'])->name('update');
 
-Route::get('/mypage', [MypageController::class, 'show']);
-Route::get('/sell', [SellController::class, 'create']);
+Route::get('/mypage', [MypageController::class, 'sellList'])->name('mypage');
+Route::get('/sell', [SellController::class, 'create'])->name('sell');
 
