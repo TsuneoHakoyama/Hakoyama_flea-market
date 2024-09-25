@@ -43,7 +43,7 @@
             <div class="price">¥{{ number_format($item->price) }}</div>
         </div>
         <div class="rating">
-            @if (count($item->favorites) == 0)
+            @if (is_null($favorite))
             <form action="{{ route('like', ['item_id'=> $item->id]) }}" method="post">
                 @csrf
                 <div class="favorite">

@@ -12,7 +12,8 @@ class ProfileController extends Controller
     public function create()
     {
         $user = Auth::id();
-        $profile = Profile::find($user);
+        $profile = Profile::where('user_id', $user)
+                   ->first();
 
         return view('profile', compact('profile'));
     }
@@ -20,6 +21,7 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         $user_id = Auth::id();
+        $presence = Profile::find($user_id);
         $param = [
             'user_id' => $user_id,
             'name' => $request->name,
@@ -28,7 +30,8 @@ class ProfileController extends Controller
             'building' => $request->building,
             'image' => $request->image
         ];
-        Profile::create($param);
+
+        is_null($presence) ? Profile::create($param): Profile::find($user_id)->update($param);
 
         $info = Profile::find($user_id);
         $items = Item::where('user_id', $user_id)

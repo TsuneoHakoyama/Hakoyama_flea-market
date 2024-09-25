@@ -59,8 +59,11 @@ class ItemController extends Controller
         $item = Item::where('id', $item_id->id )
                 ->with(['categories', 'comments', 'company', 'condition', 'favorites'])
                 ->first();
+        $favorite = Favorite::where('item_id', $item_id->id)
+                    ->where('user_id', Auth::id())
+                    ->first();
 
-        return view('item-detail', compact('item'));
+        return view('item-detail', compact('item', 'favorite'));
     }
 
 }

@@ -10,6 +10,7 @@ class FavoriteController extends Controller
 {
     public function create($item_id)
     {
+
         $user_id = Auth::id();
         $param = [
             'user_id' => $user_id,
