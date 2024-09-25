@@ -1,3 +1,13 @@
+/* header */
+.logo-link {
+    width: 20%;
+}
+
+.logo-link a img {
+    width: 100%;
+}
+
+/* body */
 .main-board {
     width: 60%;
     margin: 50px auto;
@@ -33,6 +43,7 @@
     border: 1px solid #f33;
     border-radius: 5px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .page-link {

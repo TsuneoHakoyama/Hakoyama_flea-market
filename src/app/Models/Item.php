@@ -17,7 +17,7 @@ class Item extends Model
         'user_id',
         'name',
         'price',
-        'category_id',
+        'company_id',
         'condition_id',
         'image',
         'description'
@@ -46,6 +46,11 @@ class Item extends Model
     public function condition(): BelongsTo
     {
         return $this->belongsTo(Condition::class);
+    }
+
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class);
     }
 
     public function categories(): BelongsToMany

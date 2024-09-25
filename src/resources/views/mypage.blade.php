@@ -34,32 +34,42 @@
 <div class="index-part">
     <div class="user">
         <div class="user-info">
-            <img src="{{ $info->image }}" alt="ユーザー画像">
-            <div class="user-name">{{ $info->name }}</div>
+            <img src="{{ optional($info)->image }}" alt="ユーザー画像">
+            <div class="user-name">{{ optional($info)->name }}</div>
         </div>
-        <a href="">プロフィールを編集</a>
+        <a href="{{ route('profile') }}">プロフィールを編集</a>
     </div>
+    @if (empty($buy_list))
     <div class="items">
-        <div class="sell-items">
-            <a href="">出品した商品</a>
+        <div class="sell-items active">
+            <a href="{{ route('mypage') }}">出品した商品</a>
         </div>
         <div class="buy-items">
-            <a href="">購入した商品</a>
+            <a href="{{ route('buylist') }}">購入した商品</a>
         </div>
     </div>
-
+    @else
+    <div class="items">
+        <div class="sell-items">
+            <a href="{{ route('mypage') }}">出品した商品</a>
+        </div>
+        <div class="buy-items active">
+            <a href="{{ route('buylist') }}">購入した商品</a>
+        </div>
+    </div>
+    @endif
 </div>
 <div class="item-board">
-    @foreach ($sells as $sell)
+    @foreach ($items as $item)
     <div class="item-card">
         <div class="image">
-            <a href="{{ route('detail', ['id' => $sell->id]) }}"><img src="{{ $sell->image }}" alt="item"></a>
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
         </div>
         <div class="product-detail">
-            <a href="{{ route('detail', ['id' => $sell->id]) }}">
-                <div class="name">{{ $sell->name }}</div>
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}">
+                <div class="name">{{ $item->name }}</div>
             </a>
-            <div class="price">￥{{ number_format($sell->price) }}</div>
+            <div class="price">￥{{ number_format($item->price) }}</div>
         </div>
     </div>
     @endforeach

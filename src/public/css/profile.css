@@ -52,7 +52,7 @@
 }
 
 .title {
-    margin: 30px 0;
+    margin: 50px 0;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
@@ -62,32 +62,29 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .user-image img {
     background-color: #ddd;
 }
 
-.user-image a {
-    display: block;
-    width: 30%;
-    font-size: 14px;
-    margin-left: 30px;
-    text-decoration: none;
-    text-align: center;
+.user-image input[type=file] {
+    display: none;
+}
+
+.user-image label {
     border: 1px solid #f33;
     border-radius: 5px;
     color: #f33;
+    margin-left: 30px;
     padding: 5px 10px;
-}
-
-.input-form {
-    margin: 30px 0;
+    cursor: pointer;
 }
 
 .input-form input {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .submit button {

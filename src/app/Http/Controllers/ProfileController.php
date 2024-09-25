@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,21 +11,55 @@ class ProfileController extends Controller
 {
     public function create()
     {
-        return view('profile');
+        $user = Auth::id();
+        $profile = Profile::find($user);
+
+        return view('profile', compact('profile'));
     }
 
-    public function forModify()
+    public function store(Request $request)
     {
-        return view('update-address');
+        $user_id = Auth::id();
+        $param = [
+            'user_id' => $user_id,
+            'name' => $request->name,
+            'postcode' => $request->postcode,
+            'address' => $request->address,
+            'building' => $request->building,
+            'image' => $request->image
+        ];
+        Profile::create($param);
+
+        $info = Profile::find($user_id);
+        $items = Item::where('user_id', $user_id)
+            ->get();
+        return view('mypage', compact('info', 'items'));
     }
 
-    public function update(Request $request)
+
+    public function updateAddress($item_id)
     {
-        $param = $request->all();
-        unset($param['_token']);
+        $user = Auth::id();
+        $profile = Profile::find($user);
+        $item_id = $item_id;
+
+        if (empty($profile)) {
+            return view('profile', compact(['item_id', 'profile']));
+        }
+
+        return view('update-address', compact(['item_id', 'profile']));
+    }
+
+    public function changeAddress(Request $request)
+    {
+        $param = [
+            'postcode'=>$request->postcode,
+            'address'=>$request->address,
+            'building'=>$request->building
+        ];
         $user = Auth::id();
         Profile::find($user)->update($param);
 
-        return redirect()->route('confirm');
+        return redirect()->route('confirm',['item_id' => $request->item_id]);
     }
 }

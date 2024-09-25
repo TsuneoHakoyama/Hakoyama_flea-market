@@ -16,6 +16,10 @@
     border-radius: 3px;
 }
 
+.search-form button {
+    cursor: pointer;
+}
+
 .link-list {
     display: flex;
     align-items: center;
@@ -46,12 +50,20 @@
     border-bottom: 2px solid #666;
 }
 
-.index-part a {
+.recommend a {
+    margin-left: 80px;
     text-decoration: none;
 }
 
-.recommend, .my-list {
+.my-list a {
     margin-left: 80px;
+    text-decoration: none;
+}
+
+.active a {
+    color: #f33;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .item-board {

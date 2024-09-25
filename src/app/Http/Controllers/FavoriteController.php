@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller

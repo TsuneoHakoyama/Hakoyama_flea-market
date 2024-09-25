@@ -39,7 +39,7 @@
     <div class="description-board">
         <div class="item">
             <div class="item-name">{{ $item->name }}</div>
-            <div class="brand">ブランド名</div>
+            <div class="brand">ブランド名：{{ $item->company->name }}</div>
             <div class="price">¥{{ number_format($item->price) }}</div>
         </div>
         <div class="rating">
@@ -112,7 +112,7 @@
     <div class="description-board">
         <div class="item">
             <div class="item-name">{{ $item->name }}</div>
-            <div class="brand">ブランド名</div>
+            <div class="brand">ブランド名：{{ $item->company->name }}</div>
             <div class="price">¥{{ number_format($item->price) }}</div>
         </div>
         <div class="rating">

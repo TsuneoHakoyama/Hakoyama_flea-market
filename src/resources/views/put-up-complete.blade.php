@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('page-title')
-購入完了
+出品完了
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/purchase-complete.css') }}">
+<link rel="stylesheet" href="{{ asset('css/put-up-complete.css') }}">
 @endsection
 
 @section('logo')
@@ -17,7 +17,7 @@
 @section('content')
 <main class="main-board">
     <div class="message">
-        購入が完了しました
+        出品が完了しました
     </div>
     <div class="for-home">
         <a href="{{ route('home') }}">Homeへ</a>
