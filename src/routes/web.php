@@ -23,8 +23,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ItemController::class, 'show'])->name('home');
+Route::get('/mylist', [ItemController::class, 'myList'])->name('mylist');
 Route::post('/search', [ItemController::class, 'search']);
-Route::get('/item/{id}', [ItemController::class, 'detailItem'])->name('detail');
+Route::get('/item/{item_id}', [ItemController::class, 'detailItem'])->name('detail');
 Route::get('register', [RegisterController::class, 'create'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
 
@@ -32,14 +33,18 @@ Route::post('/like/{item_id}', [FavoriteController::class, 'create'])->name('lik
 Route::post('/unlike/{item_id}', [FavoriteController::class, 'delete'])->name('unlike');
 Route::get('/item/{item_id}/comment', [CommentController::class, 'show'])->name('comment');
 Route::post('/item/{item_id}/comment', [CommentController::class, 'create'])->name('create');
+Route::post('/delete', [CommentController::class, 'remove']);
 Route::get('/purchase/{item_id}', [PurchaseController::class, 'confirm'])->name('confirm');
 Route::post('/buy', [PurchaseController::class, 'purchase']);
 Route::get('logout', [LogoutController::class, 'destroy'])->name('logout');
 
-Route::get('profile', [ProfileController::class, 'create']);
-Route::get('/purchase/address/{item_id}', [ProfileController::class, 'forModify'])->name('address');
-Route::post('/purchase/address/update', [ProfileController::class, 'update'])->name('update');
+Route::get('profile', [ProfileController::class, 'create'])->name('profile');
+Route::post('/profile/store', [ProfileController::class, 'store']);
+Route::get('/purchase/address/{item_id}', [ProfileController::class, 'updateAddress'])->name('address');
+Route::post('/purchase/address/update', [ProfileController::class, 'changeAddress']);
 
 Route::get('/mypage', [MypageController::class, 'sellList'])->name('mypage');
+Route::get('/buylist', [MypageController::class, 'buyList'])->name('buylist');
 Route::get('/sell', [SellController::class, 'create'])->name('sell');
+Route::post('/sell', [SellController::class, 'store']);
 

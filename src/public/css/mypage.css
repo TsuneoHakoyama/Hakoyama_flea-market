@@ -52,10 +52,24 @@
 .user {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+.user a {
+    border: 1px solid #f33;
+    border-radius: 5px;
+    color: #f33;
+    margin-left: 50px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .user-info {
     display: flex;
+}
+
+.user-name {
+    margin-left: 30px;
 }
 
 .items {
@@ -65,6 +79,11 @@
 
 .sell-items, .buy-items {
     margin-left: 80px;
+}
+
+.active a {
+    color: #f33;
+    font-weight: bold;
 }
 
 .item-board {

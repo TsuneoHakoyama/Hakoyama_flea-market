@@ -19,25 +19,30 @@
 .item-image {
     width: 70%;
     margin: 0 auto;
+
 }
 
 .image-card {
     width: 100%;
     height: 20vh;
     border: 2px dotted #ccc;
-
+    position: relative;
 }
 
-.image-card a {
-    display: block;
-    width: 30%;
-    font-size: 14px;
-    margin: 0 auto;
-    text-decoration: none;
+.image-card input[type=file] {
+    display: none;
+}
+
+.image-card label {
     border: 1px solid #f33;
     border-radius: 5px;
     color: #f33;
     padding: 5px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
 
 .input-form {
@@ -52,12 +57,12 @@
     border-bottom: 2px solid #bbb;
 }
 
-.item-class select {
+.item-class select, .item-info select {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.item-info input, .item-info textarea, .item-price input{
+.item-info input, .item-info textarea, .item-price input {
     width: 100%;
     margin-bottom: 20px;
 }

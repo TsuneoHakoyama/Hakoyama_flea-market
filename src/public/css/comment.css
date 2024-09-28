@@ -63,12 +63,13 @@
 }
 
 .item-name {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .brand {
     margin: 20px 0;
+    font-size: 16px;
 }
 
 .price {
@@ -89,6 +90,7 @@
 .favorite button {
     background-color: #fff;
     border: none;
+    cursor: pointer;
 }
 
 .star-icon {
@@ -113,6 +115,27 @@
     justify-content: flex-end;
     margin: 20px 0 0;
 }
+
+.seller-comment {
+    display: flex;
+    align-items: center;
+}
+
+.seller-comment .comment {
+    width: 70%;
+    padding: 5px 0;
+}
+
+.seller-comment button {
+    margin-left: 20px;
+    padding: 5px 10px;
+    background-color: #00f;
+    color: #fff;
+    border: 1px solid #00f;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 
 .buyer {
     display: flex;

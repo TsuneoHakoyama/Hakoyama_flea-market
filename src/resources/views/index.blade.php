@@ -33,21 +33,30 @@
 
 @section('content')
 <div class="index-part">
-    <div class="recommend">
+    @if (empty($my_list))
+    <div class="recommend active">
         <a href="{{ route('home') }}">おすすめ</a>
     </div>
     <div class="my-list">
-        <a href="">マイリスト</a>
+        <a href="{{ route('mylist') }}">マイリスト</a>
     </div>
+    @else
+    <div class="recommend">
+        <a href="{{ route('home') }}">おすすめ</a>
+    </div>
+    <div class="my-list active">
+        <a href="{{ route('mylist') }}">マイリスト</a>
+    </div>
+    @endif
 </div>
 <div class="item-board">
     @foreach ($items as $item)
     <div class="item-card">
         <div class="image">
-            <a href="{{ route('detail', ['id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
         </div>
         <div class="product-detail">
-            <a href="{{ route('detail', ['id' => $item->id]) }}">
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}">
                 <div class="name">{{ $item->name }}</div>
             </a>
             <div class="price">￥{{ number_format($item->price) }}</div>
@@ -56,7 +65,9 @@
     @endforeach
 </div>
 @endsection
+
 @else
+
 @section('link')
 <div class="link-list">
     <li><a href="{{ route('login') }}">ログイン</a></li>
@@ -64,9 +75,10 @@
     <li><a href="{{ route('login') }}" class="put-up">出品</a></li>
 </div>
 @endsection
+
 @section('content')
 <div class="index-part">
-    <div class="recommend">
+    <div class="recommend active">
         <a href="{{ route('home') }}">おすすめ</a>
     </div>
     <div class="my-list">
@@ -77,10 +89,10 @@
     @foreach ($items as $item)
     <div class="item-card">
         <div class="image">
-            <a href="{{ route('detail', ['id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
         </div>
         <div class="product-detail">
-            <a href="{{ route('detail', ['id' => $item->id]) }}">
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}">
                 <div class="name">{{ $item->name }}</div>
             </a>
             <div class="price">￥{{ number_format($item->price) }}</div>

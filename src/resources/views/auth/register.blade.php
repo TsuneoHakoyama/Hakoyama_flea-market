@@ -9,7 +9,10 @@
 @endsection
 
 @section('logo')
-<a href="{{ route('home') }}"><img src="{{ asset('storage/image/logo.svg') }}" alt=""></a>
+<div class="logo-link">
+    <a href="{{ route('home') }}"><img src="{{ asset('storage/image/logo.svg') }}" alt=""></a>
+</div>
+
 @endsection
 
 @section('content')

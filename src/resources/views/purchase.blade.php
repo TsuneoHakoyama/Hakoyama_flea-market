@@ -61,7 +61,7 @@
                 @csrf
                 <div class="title"> 配送先</div>
                 <div class="input-address">
-                    <div class="address">{{ $address->address." ".$address->building}}</div>
+                    <div class="address">{{ optional($address)->address." ".optional($address)->building}}</div>
                     <button type="submit">変更する</button>
                 </div>
             </form>
