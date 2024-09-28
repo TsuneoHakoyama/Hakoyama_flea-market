@@ -15,17 +15,18 @@
     </div>
     <form action="/purchase/address/update" method="post" class="input-form">
         @csrf
+        <input type="hidden" name="item_id" value="{{ $item_id }}">
         <div class="input-postcode">
             郵便番号<br>
-            <input type="text" name="postcode" value="{{ old('postcode') }}">
+            <input type="text" name="postcode" value="{{ optional($profile)->postcode }}">
         </div>
         <div class="input-address">
             住所<br>
-            <input type="text" name="address" value="{{ old('address') }}">
+            <input type="text" name="address" value="{{ optional($profile)->address }}">
         </div>
         <div class="input-building">
             建物名<br>
-            <input type="text" name="building" value="{{ old('building') }}">
+            <input type="text" name="building" value="{{ optional($profile)->building }}">
         </div>
         <div class="submit">
             <button type="submit">更新する</button>

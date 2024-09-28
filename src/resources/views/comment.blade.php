@@ -38,7 +38,7 @@
     <div class="description-board">
         <div class="item">
             <div class="item-name">{{ $item->name }}</div>
-            <div class="brand">ブランド名</div>
+            <div class="brand">ブランド名：{{ $item->company->name }}</div>
             <div class="price">¥{{ number_format($item->price) }}</div>
         </div>
         <div class="rating">
@@ -51,7 +51,7 @@
                 </div>
             </form>
             @else
-            <form action="{{ route('unlike', ['item_id', $item->id]) }}" method="post">
+            <form action="{{ route('unlike', ['item_id' => $item->id]) }}" method="post">
                 @csrf
                 <div class="favorite">
                     <button><i class="fa-regular fa-star star-icon"></i></button><br>
@@ -65,21 +65,31 @@
             </div>
         </div>
         <div class="comment-board">
-
             @foreach ($comments as $comment)
-            @if ($item->user_id === $comment->user_id)
+            @if ($comment->user_id === Auth::id())
             <div class="seller">
                 <img src="{{ optional($comment->user->profile)->image }}" alt="ユーザー画像">
                 <div class="user-name">{{ optional($comment->user->profile)->name }}</div>
+            </div>
+            <div class="seller-comment">
+                <div class="comment">{{ $comment->comment }}</div>
+                <form action="/delete" method="post">
+                    @csrf
+                    <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                    <button type="submit">削除</button>
+                </form>
             </div>
             @else
             <div class="buyer">
                 <img src="{{ optional($comment->user->profile)->image }}" alt="ユーザー画像">
                 <div class="user-name">{{ optional($comment->user->profile)->name }}</div>
             </div>
-            @endif
             <div class="comment">{{ $comment->comment }}</div>
+            @endif
             @endforeach
+
+
+
         </div>
         <form action="{{ route('create', ['item_id' => $item->id]) }}" method="post" class="input-board">
             @csrf

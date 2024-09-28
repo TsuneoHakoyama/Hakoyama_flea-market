@@ -35,30 +35,37 @@
     <div class="title">
         <p>プロフィール設定</p>
     </div>
-    <div class="user-image">
-        <img src="" alt="ユーザー画像">
-        <a href="">画像を選択する</a>
+    <div class="input-form">
+        <form action="/profile/store" method="post">
+            @csrf
+            <div class="user-image">
+                <img src="{{ optional($profile)->image }}" alt="ユーザー画像">
+                <label class="label">
+                    <input type="file" name="image">画像を選択する
+                </label>
+            </div>
+            <div class="user-name">
+                ユーザー名<br>
+                <input type="text" name="name" value="{{ optional($profile)->name }}">
+            </div>
+            <div class="postcode">
+                郵便番号<br>
+                <input type="text" name="postcode" value="{{ optional($profile)->postcode }}">
+            </div>
+            <div class="address">
+                住所<br>
+                <input type="text" name="address" value="{{ optional($profile)->address }}">
+            </div>
+            <div class="building">
+                建物名<br>
+                <input type="text" name="building" value="{{ optional($profile)->building }}">
+            </div>
+            <div class="submit">
+                <button type="submit">更新する</button>
+            </div>
+        </form>
     </div>
-    <form action="" method="post" class="input-form">
-        <div class="user-name">
-            ユーザー名<br>
-            <input type="text" name="name" value="{{ old('name') }}">
-        </div>
-        <div class="postcode">
-            郵便番号<br>
-            <input type="text" name="postcode" value="{{ old('postcode') }}">
-        </div>
-        <div class="address">
-            住所<br>
-            <input type="text" name="address" value="{{ old('address') }}">
-        </div>
-        <div class="building">
-            建物名<br>
-            <input type="text" name="building" value="{{ old('building') }}">
-        </div>
-        <div class="submit">
-            <button type="submit">更新する</button>
-        </div>
-    </form>
+
+
 </main>
 @endsection

@@ -15,7 +15,6 @@ class PurchaseController extends Controller
     {
         $item = Item::where('id', $item_id)
                 ->first();
-
         $address = Profile::where('user_id', Auth::id())
                    ->first();
 
@@ -25,7 +24,6 @@ class PurchaseController extends Controller
     public function purchase(Request $request)
     {
         $param = $request->all();
-
         Purchase::create($param);
 
         return view('purchase-complete');

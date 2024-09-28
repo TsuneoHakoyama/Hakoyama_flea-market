@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
     public function create($item_id)
     {
+
         $user_id = Auth::id();
         $param = [
             'user_id' => $user_id,

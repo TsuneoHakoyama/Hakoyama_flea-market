@@ -13,7 +13,6 @@ class CommentController extends Controller
         $item = Item::where('id', $item_id->id)
                 ->with(['comments', 'favorites'])
                 ->first();
-
         $comments = Comment::where('item_id', $item_id->id)
                     ->with('user.profile')
                     ->get();
@@ -27,9 +26,14 @@ class CommentController extends Controller
         $comment = $request->all();
         Comment::create($comment);
 
-
         return redirect()->back();
-
-
     }
+
+    public function remove(Request $request)
+    {
+        Comment::find($request->comment_id)->delete();
+        
+        return redirect ()->back();
+    }
+
 }
