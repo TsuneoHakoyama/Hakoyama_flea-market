@@ -23,6 +23,19 @@ class PurchaseController extends Controller
 
     public function purchase(Request $request)
     {
+        if ($request->payment_id == 1) {
+            $item = Item::find($request->item_id);
+            $param = [
+                'name' => $item->name,
+                'user_id' => $request->user_id,
+                'item_id' => $request->item_id,
+                'price' => $request->price,
+                'payment_id' => $request->payment_id
+            ];
+
+            return view('payment-button', compact('param'));
+        }
+
         $param = $request->all();
         Purchase::create($param);
 
