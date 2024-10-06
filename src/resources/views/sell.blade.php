@@ -10,7 +10,7 @@
 
 @section('content')
 <main class="main-board">
-    <form action="/sell" method="post">
+    <form action="/sell" method="post" enctype="multipart/form-data">
         @csrf
         <div class="title">
             <p>商品の出品</p>
@@ -18,9 +18,11 @@
         <div class="item-image">
             商品画像<br>
             <div class="image-card">
-                <label class="label">
-                    <input type="file" name="image">画像を選択する
+                <label class="label" for="image">
+                    <input type="file" name="image" id="image">画像を選択する
                 </label>
+                <p id="upload-file">選択されていません</p>
+                <script src="{{ asset('js/filename.js') }}"></script>
             </div>
         </div>
         <div class="input-form">

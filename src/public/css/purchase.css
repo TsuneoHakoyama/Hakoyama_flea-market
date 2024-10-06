@@ -62,10 +62,15 @@
 
 .item-picture {
     background-color: #ddd;
+    width: 50%;
+}
+
+.item-picture img {
+    width: 100%;
 }
 
 .item-info {
-    margin-left: 80px;
+    margin-left: 20px;
 }
 
 .name {

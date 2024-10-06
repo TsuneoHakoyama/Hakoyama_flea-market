@@ -23,15 +23,20 @@ class SellController extends Controller
 
     public function store(Request $request)
     {
+        $dir = 'image';
+        $file_name = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/'. $dir, $file_name);
+        
         $user = Auth::id();
-        $param =$request->all();
+        $param = $request->all();
         unset($param['_token']);
         unset($param['category_id']);
 
         $param['user_id'] = $user;
-        $lastInsertedId = DB::table('items')->insertGetId($param);
+        $param['image'] = 'storage/' . $dir . '/' . $file_name;
+        $last_inserted_id = DB::table('items')->insertGetId($param);
 
-        $item = Item::find($lastInsertedId);
+        $item = Item::find($last_inserted_id);
         $item->categories()->attach($request->category_id);
 
         return view('put-up-complete');

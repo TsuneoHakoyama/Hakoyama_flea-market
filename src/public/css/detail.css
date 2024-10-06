@@ -42,19 +42,20 @@
 /* body */
 .main-board {
     width: 85%;
-    margin: 100px auto 0;
+    margin: 100px auto 30px;
     display: flex;
     justify-content: space-between;
 }
 
 .image-board {
     width: 40%;
-    text-align: center;
-    background-color: #ddd;
+    height: auto;
 }
 
 .image-board img {
     width: 100%;
+    height: auto;
+
 }
 
 .description-board {
