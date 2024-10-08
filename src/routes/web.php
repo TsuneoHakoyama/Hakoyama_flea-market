@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SellController;
+use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::get('index/{user_id}', [AdminController::class, 'userComments'])->name('admin.comment');
     Route::post('comment/delete', [AdminController::class, 'removeComment'])->name('admin.comment.delete');
     Route::post('user/delete', [AdminController::class, 'removeUser'])->name('admin.user.delete');
+    Route::get('mail', [SendMailController::class, 'send'])->name('admin.send.mail');
 });
 
 Route::get('register', [RegisterController::class, 'create'])->name('register');

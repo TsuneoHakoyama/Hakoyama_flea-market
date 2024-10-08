@@ -25,12 +25,19 @@
 @if(session('remove_msg'))
 {{ session('remove_msg')}}
 @endif
+@if(session('email_msg'))
+{{ session('email_msg') }}
+@endif
+@if(session('send_fail_msg'))
+{{ session('send_fail_msg') }}
+@endif
 <table class="user-list">
     <tr>
         <th>名前</th>
         <th>E-mail</th>
         <th>郵便番号</th>
         <th>住所</th>
+        <th></th>
         <th></th>
         <th></th>
     </tr>
@@ -41,6 +48,13 @@
         <td>{{ optional($user->profile)->postcode }}</td>
         <td>{{ optional($user->profile)->address . optional($user->profile)->building }}</td>
         <td><a href="{{ route('admin.comment', ['user_id' => $user->id]) }}">コメント</a></td>
+        <td>
+            <form action="{{ route('admin.send.mail') }}" method="get">
+                @csrf
+                <input type="hidden" name="email" value="{{ $user->email }}">
+                <button type="submit">メール送信</button>
+            </form>
+        </td>
         <td>
             <form action="{{ route('admin.user.delete') }}" method="post">
                 @csrf
