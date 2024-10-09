@@ -161,3 +161,47 @@
     border-radius: 20px;
     text-align: center;
 }
+
+/* responsive design */
+@media screen and (max-width: 768px) {
+    .link-list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        font-size: 12px;
+    }
+
+    .link-list li {
+        margin-left: 10px;
+    }
+
+    .link-list a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .link-list .put-up {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .main-board {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-board {
+        width: 50%;
+    }
+
+    .description-board {
+        width: 70%;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+
+    .category-tag {
+        margin-left: 5px;
+        padding: 5px;
+    }
+}
