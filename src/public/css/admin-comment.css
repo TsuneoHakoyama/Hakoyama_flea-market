@@ -7,8 +7,12 @@
     width: 100%;
 }
 
-.link-list a {
+.link-list {
+    display: flex;
     margin-right: 20px;
+}
+
+.link-list a {
     text-decoration: none;
     color: #fff;
 }
@@ -16,48 +20,32 @@
 /* body */
 .main-board {
     width: 90%;
-    margin: 30px auto;
+    margin: 50px auto;
 }
 
-.title {
-    margin: 50px auto;
+.user-name p {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
 }
 
-.messages {
+.message {
     color: #f00;
 }
 
-.user-list {
+.comment-list {
     width: 100%;
     font-size: 16px;
 }
 
-.user-list th {
+.comment-list th {
     text-align: left;
     padding: 5px 10px;
 }
 
-.user-list td {
+.comment-list td {
     padding: 5px;
     border-top: 1px solid #000;
-}
-
-.user-list a {
-    text-decoration: none;
-    background-color: #09f;
-    color: #fff;
-    padding: 3px 5px;
-    border-radius: 5px;
-}
-
-.send {
-    background-color: #ffc0cb;
-    border: 1px solid #ffc0cb;
-    border-radius: 5px;
-    padding: 3px 5px;
 }
 
 .delete {
