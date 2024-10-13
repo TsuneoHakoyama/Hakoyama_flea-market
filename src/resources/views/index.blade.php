@@ -53,7 +53,7 @@
     @foreach ($items as $item)
     <div class="item-card">
         <div class="image">
-            <a href="{{ route('detail', ['item_id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}"><img src="{{ asset($item->image) }}" alt="item"></a>
         </div>
         <div class="product-detail">
             <a href="{{ route('detail', ['item_id' => $item->id]) }}">
@@ -89,7 +89,7 @@
     @foreach ($items as $item)
     <div class="item-card">
         <div class="image">
-            <a href="{{ route('detail', ['item_id' => $item->id]) }}"><img src="{{ $item->image }}" alt="item"></a>
+            <a href="{{ route('detail', ['item_id' => $item->id]) }}"><img src="{{ asset($item->image) }}" alt="item"></a>
         </div>
         <div class="product-detail">
             <a href="{{ route('detail', ['item_id' => $item->id]) }}">

@@ -35,7 +35,7 @@
     <div class="item-board">
         <div class="item-description">
             <div class="item-picture">
-                <img src="{{ $item->image }}" alt="商品画像">
+                <img src="{{ asset($item->image) }}" alt="商品画像">
             </div>
             <div class="item-info">
                 <div class="name">{{ $item->name }}</div>
