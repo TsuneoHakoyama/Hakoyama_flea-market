@@ -33,7 +33,7 @@
 @section('content')
 <div class="main-board">
     <div class="image-board">
-        <img src="{{ $item->image }}" alt="item">
+        <img src="{{ asset($item->image) }}" alt="item">
     </div>
     <div class="description-board">
         <div class="item">

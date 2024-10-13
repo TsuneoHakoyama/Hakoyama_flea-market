@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemsTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
         $this->call(CategoriesItemsTableSeeder::class);
+        $this->call(AdministratorsTableSeeder::class);
     }
 }

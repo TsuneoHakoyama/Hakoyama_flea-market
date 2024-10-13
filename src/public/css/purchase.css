@@ -62,10 +62,15 @@
 
 .item-picture {
     background-color: #ddd;
+    width: 50%;
+}
+
+.item-picture img {
+    width: 100%;
 }
 
 .item-info {
-    margin-left: 80px;
+    margin-left: 20px;
 }
 
 .name {
@@ -140,4 +145,45 @@
     color: #fff;
     border: none;
     border-radius: 5px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .link-list {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        font-size: 12px;
+    }
+
+    .link-list li {
+        margin-left: 10px;
+    }
+
+    .link-list a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .link-list .put-up {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .main-board {
+        margin: 40px auto;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .item-board {
+        width: 100%;
+    }
+
+    .confirm-board {
+        width: 100%;
+        margin-top: 20px;
+    }
 }

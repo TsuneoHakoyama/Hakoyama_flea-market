@@ -21,6 +21,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 1,
             'condition_id' => 1,
             'description' => '強力モーターで素早く粉砕。一度に30gまで。水洗い可でお手入れ簡単。',
+            'image' => 'storage/image/coffee-mill.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -30,6 +31,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 4,
             'condition_id' => 1,
             'description' => 'コンパクトサイズなので冷凍庫でも邪魔にならない。一度に3人分の食べきり量が材料を入れて20分で完成。',
+            'image' => 'storage/image/ice-cream-maker.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -39,6 +41,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 3,
             'condition_id' => 1,
             'description' => '牛乳パックそのままで作れるので簡単で衛生的。添付のレシピブックにはアレンジレシピも掲載しています。',
+            'image' => 'storage/image/yogurt-maker.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -48,6 +51,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 2,
             'condition_id' => 1,
             'description' => '材料を入れてボタンをひと押しするだけでおいしいスープが完成します。大容量で家族みんなで楽しめる量がボタン一つで作れます。',
+            'image' => 'storage/image/soup-maker.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -57,6 +61,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 4,
             'condition_id' => 1,
             'description' => '強力な吸引力と静かな運転音を両立。フル充電で最長50分の運転が可能。高性能フィルターで排気もきれい。',
+            'image' => 'storage/image/cleaner.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -66,6 +71,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 3,
             'condition_id' => 1,
             'description' => 'コンパクトで重さを感じにくく使いやすい。タンク容量が大きく給水の手間を省けます。高温スチームで除菌脱臭も。',
+            'image' => 'storage/image/steam-iron.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -75,6 +81,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 2,
             'condition_id' => 1,
             'description' => '交換可能なノズル付きで、様々な場所のホコリを簡単に掃除。大容量バッテリーで30分間の連続使用が可能。',
+            'image' => 'storage/image/handy-cleaner.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -84,6 +91,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 1,
             'condition_id' => 1,
             'description' => 'コンパクトで重さを感じにくく使いやすい。タンク容量が大きく給水の手間を省けます。高温スチームで除菌脱臭も。',
+            'image' => 'storage/image/hair-dryer.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -93,6 +101,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 3,
             'condition_id' => 1,
             'description' => '暖かいスチームで肌をやわらげ毛穴の奥の汚れも取り易くします。たっぷりの蒸気で顔全体をしっかり保湿。',
+            'image' => 'storage/image/steamer.jpg'
         ];
         DB::table('items')->insert($param);
         $param = [
@@ -102,6 +111,7 @@ class ItemsTableSeeder extends Seeder
             'company_id' => 4,
             'condition_id' => 1,
             'description' => '濃いひげもしっかり深剃り。立体ヘッドが肌にピッタリ密着。自動洗浄充電器付きで清潔に保てます。',
+            'image' => 'storage/image/shaver.jpg'
         ];
         DB::table('items')->insert($param);
     }
