@@ -23,7 +23,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: fleamarket-db
-      MYSQL_USER: admin
+      MYSQL_USER: fleamarket_user
       MYSQL_PASSWORD: fleamarket_pass
     command:
       mysqld --default-authentication-plugin=mysql_native_password
